@@ -26,12 +26,12 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-Bless this open-source tool that provided a good skeleton with CRUD entry points for this REST API project that I, Tamieem Jaffary, 
-then built upon for Parker's take home interview project. 
+Bless this open-source tool that provided a good skeleton with CRUD entry points for this REST API project that I, Tamieem Jaffary, have created myself.
 
 This is my first time ever using TypeScript for a project for the record. I learned everything I've done for this project while I was doing it.
 So apologies if my instructions are not thorough or incorrect. I tried to make a dockerized container with all of my necessary files and image configurations.
 
+My Task was to model the subway system 
 
 ## Installation
 
@@ -53,31 +53,44 @@ $ npm start
 ## Current Endpoints
 These endpoints were hosted on localhost:3000 for me. I'm going to make the assumption that it will be the same when it is tested.
 
-So there are a lot more endpoints in my project than required. I followed the outlines of the endpoints signatures as descibed by the challenges except for the ones I will provide below:
-```json
-POST /station/[station]/enter --> POST /ride/[station]/enter
-POST /station/[station]/exit  --> POST /ride/[station]/exit
+```
+POST /train-line -- Creates A train with its listed stations
+stations - each station (or stop) on the train line
+name - of the train line
+fare - The cost of taking this train
+
+POST /train-line
+{
+"stations": ["Canal", "Houston", "Christopher", "14th"],
+"name": "1"
+"fare": 2.75
+}
 
 
-GET /route?origin=[origin]&destination=[destination] --> GET /ride/[originStation]/[destinationStation]
 
-POST /card
+GET /ride/[originStation]/[destinationStation]  -- Returns the optimal station list from the origin station to the destination station
 
+
+POST /card -- Creates/Updates a Debit Card in the database with a balance 
+number - The Card number to create/update
+balance - the amount to add on to the card
 {
 "number": "1234",
-"amount": 10.0 --> "balance"
+"balance": 10.0
 }
+
+To Simulate a Ride:
+
+POST /ride/[station]/enter
+POST /ride/[station]/exit
 
 ```
 
-I have also included my Postman collection,"Subway Surfer.postman_collections.json" that I used to test the required endpoints in the project as reference if necessary.
+I have also included my Postman collection, "Subway Surfer.postman_collections.json" which I used to test the required endpoints in the project as a reference if necessary.
 
 
-## If You've Made it this Far
+## If You've Made It This Far
 
-I'd like to take this moment in my Readme to thank you guys for this assignment. It was challenging
+I'd like to take this moment in my Readme to thank you guys for looking into my project. It was challenging
 but also fun and exciting.
 It motivated me to build something robust and substantial like this and practice my genuine software engineering skills.
-
-
-Again thank you for your time, apologies if I took too long with this project. Hope to hear from you soon!
