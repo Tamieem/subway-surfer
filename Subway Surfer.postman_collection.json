@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "e72967b5-7ccb-4af2-a51c-0f23a4e59f40",
+		"name": "Subway Surfer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Ride",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"card\": \"0020\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/ride/{{originStation}}/enter",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ride",
+						"{{originStation}}",
+						"enter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Train and stations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"name\": \"Bethpage-Track\",\n      \"stations\": [\"New Hyde Park\", \"Farmingdale\", \"Hicksville\", \"Deer Park\", \"Stony Brook\"],\n      \"fare\": 22.4\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/train-line",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"train-line"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Card/ Update Balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"number\": \"0000\",\n    \"balance\": 23\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/card",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ride/{{originStation}}/{{destinationStation}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ride",
+						"{{originStation}}",
+						"{{destinationStation}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exit Ride",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ride/{{destinationStation}}/exit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ride",
+						"{{destinationStation}}",
+						"exit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
